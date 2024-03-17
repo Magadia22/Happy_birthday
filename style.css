@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+h2
+{
+    position: relative;
+    font-size: 6em;
+    color: #222;
+}
+h2::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #ec86f5;
+    width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #ec86f5;
+    animation: animate 8s linear infinite;
+    filter: drop-shadow(0 0 20px #ec86f5)drop-shadow(0 0 50px #ec86f5);
+}
+@keyframes animate
+{
+    0%,10%,100%
+    {
+        width:0;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+}
+.name{
+    position: absolute;
+    align-items: center;
+    top: 55%;
+
+}
+
+.loyd{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.btn {
+    background: none;
+    border: 2px solid #ec86f5;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    min-width: 200px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 12%;
+    width: 90%;
+    height: 70%;
+    background: #ec86f5;
+    z-index: -1;
+    transition: transform 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform-origin: 0 0;
+}
+
+.btn1::before {
+    transform: scaleX(0);
+}
+
+.btn1:hover::before {
+    transform: scaleX(1);
+}
+
